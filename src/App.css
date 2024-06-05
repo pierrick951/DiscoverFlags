@@ -8,8 +8,12 @@
 
 
 
-.mainContainer{
+.mainContainer {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   & h1 {
     color: white;
     padding-block: 30px;
@@ -17,11 +21,11 @@
   }
 }
 
-.containerInfo{
-  background-color: red;
+.containerInfo {
   display: flex;
+justify-content: center;
   flex-direction: row;
-  flex-wrap: wrap;
+
   height: 90vh;
   padding-inline: 20px;
   font-family: Rubik Mono One;
@@ -29,21 +33,88 @@
 
 .BoxNamFlags {
   background-color: rgba(175, 167, 167, 0.541);
- 
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   width: 400px;
   height: 400px;
   padding-block: 20px;
   border-radius: 15px;
 
   & h2 {
-    color: #1c1c1c;
+    color: #ffffff;
     padding-block: 20px;
   }
 
   & img {
     width: 80%;
     height: 200px;
+    object-fit: contain;
 
   }
 
+
+}
+
+button {
+  cursor: pointer;
+  background-color: indianred;
+  color: white;
+  border: none;
+  margin-right: 20px;
+  padding-block: 10px;
+  padding-inline: 15px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.fantom {
+  background: transparent;
+  border: 2px solid indianred;
+}
+
+button:hover {
+  background-color: rgba(255, 152, 152, 0.596);
+}
+
+.BoxInfo {
+  
+  background-color: rgba(175, 167, 167, 0.541);
+  width: 50%;
+  height: 85vh;
+  margin-left: 20px;
+  border-radius: 15px;
+
+  & h2 {
+    color: #ffffff;
+    padding-block: 20px;
+  }
+
+}
+
+.contentInfo{
+  background-color: red;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width:750px){
+  .containerInfo{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width:750px)and(max-width:1000px){
+  .box {
+    width: 80%;
+    margin: 0;
+    margin-right: 10px;
+  }
 }

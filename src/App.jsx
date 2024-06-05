@@ -37,13 +37,21 @@ export default function App() {
 
   
       
-          <div className="BoxNamFlags">
+          <div className="BoxNamFlags box">
             <h2>{countries[index].name.common}</h2>
             <img src={countries[index].flags.png} alt={countries[index].name.common} />
             <div className="buttons">
-              <button onClick={() => PreviousCountries()}>Previous</button>
+              <button onClick={() => PreviousCountries()}
+              className="fantom">Previous</button>
               <button onClick={() => nextCountries()}>Next</button>
             </div>
+          </div>
+
+          <div className="BoxInfo box">
+           <h2>Info</h2>
+           <div className="contentInfo">
+            <p></p>
+           </div>
           </div>
      
      
