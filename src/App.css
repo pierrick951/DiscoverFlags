@@ -1,0 +1,49 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.mainContainer{
+  text-align: center;
+  & h1 {
+    color: white;
+    padding-block: 30px;
+    font-family: Rubik Mono One;
+  }
+}
+
+.containerInfo{
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 90vh;
+  padding-inline: 20px;
+  font-family: Rubik Mono One;
+}
+
+.BoxNamFlags {
+  background-color: rgba(175, 167, 167, 0.541);
+ 
+  width: 400px;
+  height: 400px;
+  padding-block: 20px;
+  border-radius: 15px;
+
+  & h2 {
+    color: #1c1c1c;
+    padding-block: 20px;
+  }
+
+  & img {
+    width: 80%;
+    height: 200px;
+
+  }
+
+}
