@@ -29,44 +29,20 @@ export default function App() {
   }
 
   return (
-    <div className="mainContainer">
-      <h1>Discover Flags</h1>
-      <div className="containerInfo">
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : (
-          countries.length > 0 && (
-            <div className="BoxNamFlags box">
-              <h2>{countries[index].name.common}</h2>
-              <img src={countries[index].flags.png} alt={countries[index].name.common} />
-              <div className="buttons">
-                <button onClick={previousCountries} className="fantom">Previous</button>
-                <button onClick={nextCountries}>Next</button>
-              </div>
-            </div>
-          )
-        )}
-        {!isLoading && (
-          <div className="BoxInfo box">
-            <h2>Info</h2>
-            <div className="contentInfo">
-              <p>
-                <span>Capital:</span>
-                {countries[index]?.capital} 
-              </p>
-              <p>
-                <span>Fifa:</span>
-                {countries[index]?.fifa}
-              </p>
-              <p>
-                <span>Languages:</span>
-                {Object.values(countries[index]?.languages).join(", ")} 
-              </p>
-            </div>
+    <div className="bg-zinc-900 w-full h-screen flex justify-center items-center">
+      <div className="bg-red-500 h-auto w-[500px] rounded-xl">
+        <div className="flex justify-center w-full">
+          <h2 className="text-2xl py-2 font-semibold text-gray-300">Flags App</h2>
+        </div>
+        <div className="h-auto py-5 rounded-sm flex justify-center flex-col items-center">
+          <div className="w-1/2">
+            {isLoading ? (<p>Chargement ...</p>) : (<img className="  w-30 pb-5" src={countries[index].flags.svg} alt="" />)}
           </div>
-        )}
+          <div className="flex items-center justify-center py-5 bg-red-200 w-1/2 rounded-xl">
+            {isLoading ? (<p>Chargement ...</p>) : (<p className="text-zinc-900  text-xl font-karla">{countries[index].name.common}</p>)}
+          </div>
 
-
+        </div>
       </div>
     </div>
   );
