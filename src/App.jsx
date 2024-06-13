@@ -17,6 +17,7 @@ export default function App() {
       .then(response => {
         setCountries(response);
         setIsLoading(false);
+        console.log(response)
       })
       .catch(error => {
         console.error('An error occurred:', error);
@@ -34,7 +35,7 @@ export default function App() {
 
   return (
     <div className="bg-zinc-900 w-full h-screen flex justify-center items-center">
-      <div className="bg-red-500 h-30 w-full sm:w-[450px] rounded-xl shadow-xl">
+      <div className="bg-gradient-to-r from-red-500 to-red-900 h-30 w-full sm:w-[450px] rounded-xl shadow-xl shadow-black">
         <div className="flex justify-center w-full">
           <h2 className="text-2xl py-2 font-semibold text-gray-300">Flags App</h2>
         </div>
@@ -42,21 +43,21 @@ export default function App() {
           <div className="w-1/2">
             {isLoading ? (<p>Loading ...</p>) : (<img className="w-30 rounded-t-xl py-2 h-30" src={countries[index].flags.svg} alt={countries[index].name.common} />)}
           </div>
-          <div className="flex items-center justify-center py-2 bg-slate-200 w-1/2 rounded-b-xl h-auto">
+          <div className="flex items-center justify-center py-2 bg-slate-200 w-1/2 rounded-b-xl h-auto  shadow-md">
             {isLoading ? (<p>Loading ...</p>) : (<p className="text-zinc-900 text-xl truncate font-karla">{countries[index].name.common}</p>)}
           </div>
         </div>
-        <div className="w-full bg-gray-200 rounded-b-md py-2 flex justify-center">
-          <button className="bg-red-500 rounded-xl py-2 px-2 shadow-sm mx-1 active:bg-red-800" onClick={previousCountries}>
+        <div className="w-full bg-gray-200 rounded-b-xl py-5 flex justify-center">
+          <button className="bg-red-500 rounded-xl py-2 px-2  mx-1 active:bg-red-800 shadow-black shadow-md" onClick={previousCountries}>
             <ChevronLeft color="#f1f1f1" />
           </button>
-          <button className="bg-red-500 rounded-xl py-2 px-2 shadow-sm mx-1" onClick={() => setShowPortal(true)}>
+          <button className="bg-red-500 rounded-xl py-2 px-2  shadow-black shadow-md mx-1" onClick={() => setShowPortal(true)}>
             <Info color="#fafafa" />
           </button>
-          <button className="bg-red-500 rounded-xl py-2 px-2 shadow-sm mx-1" onClick={() => setShowPortal(true)}>
+          <button className="bg-red-500  rounded-xl py-2 px-2  shadow-black shadow-md mx-1 animate-pulse" onClick={() => setShowPortal(true)}>
             <Earth color="#fafafa" />
           </button>
-          <button className="bg-red-500 rounded-xl py-2 px-2 shadow-sm mx-1" onClick={nextCountries}>
+          <button className="bg-red-500 rounded-xl py-2 px-2  shadow-black shadow-md mx-1" onClick={nextCountries}>
             <ChevronRight color="#f1f1f1" />
           </button>
         </div>
