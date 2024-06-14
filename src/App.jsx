@@ -11,6 +11,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [showPortal, setShowPortal] = useState(false);
 
+
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then(response => response.json())
@@ -54,9 +55,11 @@ export default function App() {
           <button className="bg-red-500 rounded-xl py-2 px-2 shadow-black shadow-md mx-1" onClick={() => setShowPortal(true)}>
             <Info color="#fafafa" />
           </button>
-          <button className="bg-red-500 rounded-xl py-2 px-2 shadow-black shadow-md mx-1 animate-pulse" >
+          <a  
+          href={countries[index] && countries[index].maps ? countries[index].maps.googleMaps : "#"}
+          className="bg-red-500 rounded-xl py-2 px-2 shadow-black shadow-md mx-1 animate-pulse" >
             <Earth color="#fafafa" />
-          </button>
+          </a>
           <button className="bg-red-500 rounded-xl py-2 px-2 shadow-black shadow-md mx-1" onClick={nextCountries}>
             <ChevronRight color="#f1f1f1" />
           </button>
