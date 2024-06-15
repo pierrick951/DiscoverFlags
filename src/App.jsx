@@ -67,6 +67,7 @@ export default function App() {
       </div>
       {showPortal && createPortal(<Map close={() => setShowPortal(false)} />, document.body)}
       {showPortal && createPortal(<InfosCountries country={countries[index]} close={() => setShowPortal(false)} />, document.body)}
+      
     </div>
   );
 }
