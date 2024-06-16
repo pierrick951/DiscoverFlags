@@ -40,9 +40,9 @@ export default function App() {
         <div className="flex justify-center w-full">
           <h2 className="text-2xl py-2 font-semibold text-gray-300">Flags App</h2>
         </div>
-        <div className="h-auto py-5 rounded-sm flex justify-center flex-col items-center">
-          <div className="w-1/2">
-            {isLoading ? (<p>Loading ...</p>) : (<img className="w-30 rounded-t-xl py-2 h-30" src={countries[index].flags.svg} alt={countries[index].name.common} />)}
+        <div className="h-auto py-5 rounded-sm flex justify-center items-center flex-col ">
+          <div className="w-auto h-40 flex justify-center items-center ">
+            {isLoading ? (<p>Loading ...</p>) : (<img className=" max-h-full rounded-t-xl py-2" src={countries[index].flags.svg} alt={countries[index].name.common} />)}
           </div>
           <div className="flex items-center justify-center py-2 bg-slate-200 w-1/2 rounded-b-xl h-auto shadow-md">
             {isLoading ? (<p>Loading ...</p>) : (<p className="text-zinc-900 text-xl truncate font-karla">{countries[index].name.common}</p>)}
